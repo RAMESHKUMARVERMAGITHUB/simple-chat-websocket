@@ -29,6 +29,6 @@ spec:
     app: portfolio
   ports:
   - protocol: TCP
-    port: 6969             # Expose port 80
+    port: 80             # Expose port 80
     targetPort: 6969
   type: LoadBalancer
