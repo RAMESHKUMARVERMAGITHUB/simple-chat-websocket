@@ -66,27 +66,27 @@ pipeline{
                 sh "trivy image rameshkumarverma/simple-chat-websocket:latest > trivyimage.txt"
             }
         }
-        // stage("deploy_docker"){
-        //     steps{
-        //         sh "docker run -d --name portfolio -p 6969:6969 rameshkumarverma/simple-chat-websocket:latest"
-        //     }
-        // }
+        stage("deploy_docker"){
+            steps{
+                sh "docker run -d --name portfolio -p 6969:6969 rameshkumarverma/simple-chat-websocket:latest"
+            }
+        }
         // stage("docker-deploy"){
         //     steps{
         //         sh "docker-compose up -d"
         //     }
         // }
-        stage('Deploy to kubernets'){
-            steps{
-                script{
-                    // dir('K8S') {
-                        withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-                                sh 'kubectl apply -f deployment-service.yml'
-                                // sh 'kubectl apply -f service.yml'
-                        }
-                    // }
-                }
-            }
-        }
+        // stage('Deploy to kubernets'){
+        //     steps{
+        //         script{
+        //             // dir('K8S') {
+        //                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+        //                         sh 'kubectl apply -f deployment-service.yml'
+        //                         // sh 'kubectl apply -f service.yml'
+        //                 }
+        //             // }
+        //         }
+        //     }
+        // }
     }
 }
