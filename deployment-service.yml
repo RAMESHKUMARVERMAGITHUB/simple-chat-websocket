@@ -17,7 +17,7 @@ spec:
       - name: portfolio
         image: rameshkumarverma/simple-chat-websocket:latest
         ports:
-        - containerPort: 80   # Use port 3000
+        - containerPort: 6969   # Use port 3000
 
 ---
 apiVersion: v1
