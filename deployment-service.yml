@@ -17,7 +17,7 @@ spec:
       - name: portfolio
         image: rameshkumarverma/simple-chat-websocket:latest
         ports:
-        - containerPort: 80   # Use port 3000
+        - containerPort: 6969   # Use port 3000
 
 ---
 apiVersion: v1
@@ -29,6 +29,6 @@ spec:
     app: portfolio
   ports:
   - protocol: TCP
-    port: 80             # Expose port 80
+    port: 6969             # Expose port 80
     targetPort: 6969
   type: LoadBalancer
